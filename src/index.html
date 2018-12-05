@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Другофильтр</title>
+  <script src="https://vk.com/js/api/openapi.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="app">
+  <header class="header">
+    <h2 class="header__title">Выбери друзей</h2>
+    <span class="header__btn-close"></span>
+  </header>
+  <div class="friends">
+    <div class="friends__display">
+      <div class="friends__search-panel">
+        <input type="text"
+               class="friends__input"
+               placeholder="Начните вводить имя друга"
+               data-bind="displayList">
+      </div>
+      <h3 class="friends__subtitle">Ваши друзья</h3>
+      <ul class="friends__list"></ul>
+    </div>
+    <div class="friends__display-selected">
+      <div class="friends__search-panel">
+        <input type="text"
+               class="friends__input"
+               placeholder="Начните вводить имя друга"
+               data-bind="displaySelectedList">
+      </div>
+      <h3 class="friends__subtitle">Друзья в списке</h3>
+      <ul class="friends__list"></ul>
+    </div>
+  </div>
+  <footer class="footer">
+    <button class="footer__btn-save">Сохранить</button>
+  </footer>
+</div>
+<script id="friend-template" type="text/x-handlebars-template">
+  {{#each this}}
+    <li class="friends__item" draggable="true" data-id="{{id}}">
+      <img src="{{photo_100}}" alt="Фотография друга" class="friends__photo">
+      <p class="friends__name">{{first_name}} {{last_name}}</p>
+      {{#if selected}}
+        <span class="friends__btn friends__btn--close"></span>
+      {{else}}
+        <span class="friends__btn"></span>
+      {{/if}}
+    </li>
+  {{/each}}
+</script>
+<script src="/main.js"></script>
+</body>
+</html>
