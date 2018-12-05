@@ -11,10 +11,10 @@ export default {
         this.input = document.querySelector(`${name} .friends__input`);
         this.isDisplaySelected = name.includes('selected');
       }
-      filtration(data) {
+      filtration() {
         const isMatching = (full, chunk) => full.toLowerCase().includes(chunk.toLowerCase());
 
-        data.filter(this.isDisplaySelected).forEach(el => {
+        friends.filter(this.isDisplaySelected).forEach(el => {
           const fullName = `${el.first_name} ${el.last_name}`;
 
           isMatching(fullName, this.input.value) ?
@@ -56,7 +56,7 @@ export default {
 
       list.node.appendChild(data[id].node);
       data[id].selected = !data[id].selected;
-      list.filtration(friends);
+      list.filtration();
       btn.classList.toggle('friends__btn--close');
     };
 
@@ -74,7 +74,7 @@ export default {
     };
 
     this.app.addEventListener('input', e => {
-      bindMap[e.target.dataset.bind].filtration(friends);
+      bindMap[e.target.dataset.bind].filtration();
     });
 
     const makeDnD = (zones, data) => {
