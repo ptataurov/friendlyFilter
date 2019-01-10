@@ -1,4 +1,4 @@
-# Выпускной проект "Фильтр друзей" курса "Комплексное обучение JavaScript" в LoftSchool
+# Проект "Фильтр друзей"
 
 ### Описание проекта
 
@@ -7,7 +7,7 @@
 ![Фильтр друзей](https://media.giphy.com/media/too1W1NNtbH2MGp1kL/giphy.gif)
 
 
-### В проекте использовались:
+### Стек технологий
 - Нативный JavaScript ES6+
 - VK API
 - MVC
@@ -23,7 +23,7 @@
 $ git clone git@github.com:ptataurov/friendlyFilter.git
 $ cd friendlyFilter
 $ npm install
-$ npm start
+$ npm run start
 ```
 
 
